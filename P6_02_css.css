@@ -1,0 +1,156 @@
+body
+{
+	margin: 0px
+}
+
+
+
+.bande_horizontale
+{
+	position: relative;
+	padding: 0px;
+	margin: auto;
+	width : auto;
+	height: 120px;
+	background-color: #808080;
+}
+
+#title
+{
+	position: absolute;
+  top: 50px;
+  left: 15%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 40px;
+}
+
+#navigation
+{
+	list-style-type: none;
+	display: flex;
+	position:absolute;
+	margin-left: 50%;
+	margin-top:70px;
+
+}
+
+#navigation li
+{
+	margin-left: 100px;
+	font-size: 22px;
+	color:white;
+	cursor: pointer;
+}
+
+#rectangle {
+    width:95%;
+    margin-left: 2.5%;
+    margin-top: 2%;
+    top:15%;
+    left:0;
+    border : solid;
+    border-color: black;
+    border-width: 5px;
+    display: flex;
+}
+
+#titleplay
+{
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-color: red;
+
+}
+
+#titleplay h1
+{
+	margin: 0 auto;
+	margin-bottom: 40px;
+}
+
+#titleplay h3
+{
+	margin:  0 auto;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 15px;
+}
+
+#titleplay button
+{
+	width: 20%;
+	height: 100%;
+	margin: 0 auto;
+	background-color: #DC143C;
+	border-radius: 25px;
+	width: 150px;
+	height: 40px;
+	color: white;
+	border : none;
+}
+
+#titleplay button:hover
+{
+	background-color: #b01030;
+}
+
+#global
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.aligned_title
+{
+	display: flex;
+	justify-content: center;
+	margin-top: 80px;
+}
+
+.films
+{
+	display: flex;
+	justify-content: space-around;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 3%;
+}
+
+.image
+{
+	border: solid;
+	border-width: 5px;
+	height: 268px;
+	width: 182px;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    
+    margin-top: 10%;
+    border-right: 20px solid black;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+
+    margin-top: 10%;
+    border-left: 20px solid black;
+}
+
+#res
+{
+	background-color: red;
+}
