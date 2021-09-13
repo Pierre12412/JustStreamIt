@@ -49,8 +49,6 @@ fetch(`http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score`)
             change_movies(index_first)
             arrow_left.onclick = go_left
             arrow_right.onclick = go_right
-
-
         })
     })
 
