@@ -155,7 +155,8 @@ body
 
 #popup
 {
-	background-color: rgba(100,150,255);
+	background-color: black;
+	color: white;
 	position: absolute;
 	z-index: 30;
 	height: 70%;
@@ -165,6 +166,17 @@ body
 	margin-top: 2%;
 	border-radius: 25px;
 	visibility: hidden;
+	display: flex;
+
+
+}
+
+
+#left_part
+{
+	display: flex;
+	flex-direction: column;
+	margin-left: 1%;
 }
 
 #blur
@@ -176,4 +188,11 @@ body
 	width: 100%;
 	z-index: 20;
 	visibility: hidden;
+}
+
+#movie_image
+{
+	margin-top: 2%;
+	margin-left: 3%;
+	max-height: 300px;
 }

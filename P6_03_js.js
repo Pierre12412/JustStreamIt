@@ -102,15 +102,29 @@ fetch(`http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score`)
                     fetch(`http://127.0.0.1:8000/api/v1/titles/?title=${bests_title[image_best[i].getAttribute('index')]}`)
                     .then(reponse => reponse.json())
                     .then(ans => {
-                        const popup = document.getElementById("popup")
-                        const blur = document.getElementById("blur")
-                        const body = document.getElementsByTagName('body')
-                        popup.style.visibility = "visible"
-                        blur.style.visibility = "visible"
-                        body[0].style.overflow = "hidden"
-                        document.getElementById('selection_title').innerHTML = ans.results[0].title
-                        console.log(ans.results[0].url)
+                        fetch(ans.results[0].url)
+                        .then(res => res.json())
+                        .then(dat => {
+                            const popup = document.getElementById("popup")
+                            const blur = document.getElementById("blur")
+                            const body = document.getElementsByTagName('body')
 
+                            popup.style.visibility = "visible"
+                            blur.style.visibility = "visible"
+                            body[0].style.overflow = "hidden"
+
+                            const movie = dat
+                            document.getElementById('selection_title').innerHTML = movie.title
+                            document.getElementById('movie_image').src = movie.image_url
+                            var all = ''
+                            for (var ind = 0; ind < movie.genres.length; ind+=1){
+                                all += movie.genres[ind] + ' '
+                            }
+                            document.getElementById('genre').innerHTML = all
+                            document.getElementById('date').innerHTML = movie.date_published
+                            console.log(movie)
+
+                        })
 
                     })
                 })
