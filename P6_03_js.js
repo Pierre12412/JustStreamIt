@@ -1,9 +1,10 @@
-var image = document.getElementById('1')
+var image = [document.getElementById('1'),document.getElementById('2'),document.getElementById('3'),document.getElementById('4')]
 let bests = []
+var index_first = 0
 
 // Bests Movies
-arrow_left = document.getElementsById('arrow-left-best')
-arrow_right = document.getElementsById('arrow-right-best')
+arrow_left = document.getElementById('arrow-left-best')
+arrow_right = document.getElementById('arrow-right-best')
 
 fetch(`http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score`)
     .then(reponse => reponse.json())
@@ -19,11 +20,35 @@ fetch(`http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score`)
             bests.push(data.results[i].image_url)}
     })
         .then(func => {
-            for (let img_index = 0; img_index<4;img_index++){
-                var image = document.getElementById(`${img_index + 1}`)
-                image.src = bests[img_index]
-            }  
-
+            function change_movies(index_first){
+                if (index_first >= 4 )
+                {
+                    index_first = 3
+                }
+                if (index_first <= 0){
+                    index_first = 0
+                }
+                i = 0
+                for (let img_index = index_first; img_index < index_first + 4;img_index++){
+                    image[i].src = bests[img_index]
+                    i += 1
+                }
+            }
+            function go_left() {
+                if (index_first != 0) {
+                    index_first -= 1
+                }
+                change_movies(index_first)
+            }
+            function go_right() {
+                if (index_first != 3) {
+                    index_first += 1
+                }
+                change_movies(index_first)
+            }
+            change_movies(index_first)
+            arrow_left.onclick = go_left
+            arrow_right.onclick = go_right
 
 
         })
