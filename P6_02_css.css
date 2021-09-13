@@ -167,8 +167,6 @@ body
 	border-radius: 25px;
 	visibility: hidden;
 	display: flex;
-
-
 }
 
 
@@ -177,6 +175,19 @@ body
 	display: flex;
 	flex-direction: column;
 	margin-left: 1%;
+	margin-top: 1%;
+	max-width: 200px;
+}
+
+#right_part
+{
+	margin-left: 5%;
+	max-width: 800px;
+}
+
+#resume_popup
+{
+	max-width: 800px;
 }
 
 #blur
@@ -195,4 +206,20 @@ body
 	margin-top: 2%;
 	margin-left: 3%;
 	max-height: 300px;
+	max-width: 220px;
+}
+
+#close
+{
+	margin-top: 1%;
+	margin-left: 950px;
+	height: 40px;
+	width: 80px;
+	border-radius: 20px;
+	background-color: #FA8072;
+	border: none;
+}
+#close:hover
+{
+	background-color: #CD5C5C
 }
