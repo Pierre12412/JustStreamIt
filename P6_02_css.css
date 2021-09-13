@@ -151,3 +151,29 @@ body
     margin-top: 10%;
     border-left: 20px solid black;
 }
+
+
+#popup
+{
+	background-color: rgba(100,150,255);
+	position: absolute;
+	z-index: 30;
+	height: 70%;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 2%;
+	border-radius: 25px;
+	visibility: hidden;
+}
+
+#blur
+{
+	margin: 0 auto;
+	position: absolute;
+	background-color: rgba(0,0,0,0.5);;
+	height: 100%;
+	width: 100%;
+	z-index: 20;
+	visibility: hidden;
+}
