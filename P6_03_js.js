@@ -1,5 +1,6 @@
 var image_best = [document.getElementById('1'),document.getElementById('2'),document.getElementById('3'),document.getElementById('4')]
 let bests = []
+let bests_title = []
 var index_first = 0
 
 //Action
@@ -53,14 +54,16 @@ fetch(`http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score`)
 
         //Best Movies
         for (let i = 1; i < 5; i++) {
-            bests.push(data.results[i].image_url)}
+            bests.push(data.results[i].image_url)
+            bests_title.push(data.results[i].title)}
         })
     .then(next => {
         fetch(`http://127.0.0.1:8000/api/v1/titles/?page=2&sort_by=-imdb_score`)
         .then(reponse => reponse.json())
         .then(data => {
             for (let i = 0; i < 3; i++) {
-            bests.push(data.results[i].image_url)}
+            bests.push(data.results[i].image_url)
+            bests_title.push(data.results[i].title)}
     })
         .then(func => {
             function change_movies(index_first){
@@ -74,6 +77,8 @@ fetch(`http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score`)
                 i = 0
                 for (let img_index = index_first; img_index < index_first + 4;img_index++){
                     image_best[i].src = bests[img_index]
+                    image_best[i].setAttribute('url',bests[img_index])
+                    image_best[i].setAttribute('index',i+index_first)
                     i += 1
                 }
             }
@@ -92,6 +97,17 @@ fetch(`http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score`)
             change_movies(index_first)
             arrow_left.onclick = go_left
             arrow_right.onclick = go_right
+            for (let i = 0; i < image_best.length;i++){
+                image_best[i].addEventListener('click',function(){
+                    fetch(`http://127.0.0.1:8000/api/v1/titles/?title=${bests_title[image_best[i].getAttribute('index')]}`)
+                    .then(reponse => reponse.json())
+                    .then(ans => {
+                        console.log(ans.results[0].url)
+
+
+                    })
+                })
+            }
         })
     })
 
