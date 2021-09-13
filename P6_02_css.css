@@ -44,15 +44,17 @@ body
 }
 
 #rectangle {
-    width:95%;
+    width:40%;
     margin-left: 2.5%;
     margin-top: 2%;
     top:15%;
-    left:0;
     border : solid;
     border-color: black;
     border-width: 5px;
     display: flex;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: space-around;
 }
 
 #titleplay
