@@ -2,7 +2,7 @@ const popup = document.getElementById("popup")
 const blur = document.getElementById("blur")
 const body = document.getElementsByTagName('body')
 
-
+let first = null
 
 var image_best = [document.getElementById('1'),document.getElementById('2'),document.getElementById('3'),document.getElementById('4')]
 let bests = []
@@ -54,6 +54,16 @@ fetch(`http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score`)
         const img = document.getElementById('res')
         img.src = data.results[0].image_url
         titre.innerHTML = data.results[0].title
+        first = data.results[0]
+        document.getElementById('res').addEventListener('click',function(){
+            fetch(first.url)
+                .then(re => re.json())
+                .then(ans => {
+                     popup_display()
+                    const movie = ans
+                    display_informations(movie)
+                })
+        })
 
         fetch(data.results[0].url)
             .then(rep => rep.json())
