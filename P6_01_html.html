@@ -1,30 +1,32 @@
+<!DOCTYPE html>
 <html>
-<html>
-<div id='popup'>
-	<div id="left_part">
-		<img src="#" id="movie_image">
-		<h1 id='selection_title'>Titre</h1>
-		<h3 id='genre'>Genre</h3>
-		<h4 id='date'></h4>
-	</div>
-	<div id='right_part'>
-		<button id = 'close'>Fermer</button>
-		<h4 id='rated'>Not rated or unkown rating</h4>
-		<h4 id="imdb"></h4>
-		<h5 id='real'></h5>
-		<h5 id='actors'></h5>
-		<h5 id='duration'></h5>
-		<h5 id='countries'></h5>
-		<h3 id='boxoffice'></h3>
-		<p id = 'resume_popup'></p>
-	</div>
-</div>
-	<div id='blur'></div>
 <head>
 
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="P6_02_css.css" />
 	<title>OcMovies</title>
+</head>
+<body >
+	<div id='popup'>
+		<div id="left_part">
+			<img src="#" id="movie_image">
+			<h1 id='selection_title'>Titre</h1>
+			<h3 id='genre'>Genre</h3>
+			<h4 id='date'></h4>
+		</div>
+		<div id='right_part'>
+			<button id = 'close'>Fermer</button>
+			<h4 id='rated'>Not rated or unkown rating</h4>
+			<h4 id="imdb"></h4>
+			<h5 id='real'></h5>
+			<h5 id='actors'></h5>
+			<h5 id='duration'></h5>
+			<h5 id='countries'></h5>
+			<h3 id='boxoffice'></h3>
+			<p id = 'resume_popup'></p>
+		</div>
+	</div>
+	<div id='blur'></div>
 	<div class="bande_horizontale">
 		<h1 id="title">JustStreamIt</h1>
 		<nav>
@@ -34,8 +36,7 @@
 			</ul>
 		</nav>
 	</div>
-</head>
-<body >
+
 	<div id='global'>
 		<div id='rectangle'>
 			<div id="titleplay">
@@ -50,7 +51,10 @@
 				</h3>
 			</div>
 			<div>
-				<img id='res' src="#">
+				<div class='image_container' id='div_image_top'>
+					<img src="#" class='image' id='res'>
+					<div class="loader"></div>
+				</div>
 			</div>
 
 		</div>
@@ -58,37 +62,85 @@
 			<h1 class='aligned_title'>Films les mieux notés</h1>
 			<div class="films">
 				<div class='arrow-left' id='arrow-left-best'></div>
-				<img src="#" class='image' id='1'>
-				<img src="#" class='image' id='2'>			
-				<img src="#" class='image' id='3'>
-				<img src="#" class='image' id='4'>
+				<div class='image_container'>
+					<img src="#" class='image' id='1'>
+					<div class="loader"></div>
+				</div>
+				<div class='image_container'>
+					<img src="#" class='image' id='2'>
+					<div class="loader"></div>
+				</div>		
+				<div class='image_container'>
+					<img src="#" class='image' id='3'>
+					<div class="loader"></div>
+				</div>
+				<div class='image_container'>
+					<img src="#" class='image' id='4'>
+					<div class="loader"></div>
+				</div>
 				<div class='arrow-right' id='arrow-right-best'></div>
 			</div>
 			<h1 class='aligned_title'>Action</h1>
 			<div class="films">
 				<div class='arrow-left' id='arrow-left-action'></div>
-				<img src="#" class='image' id='5'>
-				<img src="#" class='image' id='6'>			
-				<img src="#" class='image' id='7'>
-				<img src="#" class='image' id='8'>
+				<div class='image_container'>
+					<img src="#" class='image' id='5'>
+					<div class="loader"></div>
+				</div>
+				<div class='image_container'>
+					<img src="#" class='image' id='6'>
+					<div class="loader"></div>
+				</div>		
+				<div class='image_container'>
+					<img src="#" class='image' id='7'>
+					<div class="loader"></div>
+				</div>
+				<div class='image_container'>
+					<img src="#" class='image' id='8'>
+					<div class="loader"></div>
+				</div>
 				<div class='arrow-right' id='arrow-right-action'></div>
 			</div>
 			<h1 class='aligned_title'>Animation</h1>
 			<div class="films">
 				<div class='arrow-left' id='arrow-left-animation'></div>
-				<img src="#" class='image' id='9'>
-				<img src="#" class='image' id='10'>			
-				<img src="#" class='image' id='11'>
-				<img src="#" class='image' id='12'>
+				<div class='image_container'>
+					<img src="#" class='image' id='9'>
+					<div class="loader"></div>
+				</div>
+				<div class='image_container'>
+					<img src="#" class='image' id='10'>
+					<div class="loader"></div>
+				</div>		
+				<div class='image_container'>
+					<img src="#" class='image' id='11'>
+					<div class="loader"></div>
+				</div>
+				<div class='image_container'>
+					<img src="#" class='image' id='12'>
+					<div class="loader"></div>
+				</div>
 				<div class='arrow-right' id='arrow-right-animation'></div>
 			</div>
 			<h1 class='aligned_title'>Thriller</h1>
 			<div class="films">
 				<div class='arrow-left' id="arrow-left-thriller"></div>
-				<img src="#" class='image' id='13'>
-				<img src="#" class='image' id='14'>			
-				<img src="#" class='image' id='15'>
-				<img src="#" class='image' id='16'>
+				<div class='image_container'>
+					<img src="#" class='image' id='13'>
+					<div class="loader"></div>
+				</div>
+				<div class='image_container'>
+					<img src="#" class='image' id='14'>
+					<div class="loader"></div>
+				</div>		
+				<div class='image_container'>
+					<img src="#" class='image' id='15'>
+					<div class="loader"></div>
+				</div>
+				<div class='image_container'>
+					<img src="#" class='image' id='16'>
+					<div class="loader"></div>
+				</div>
 				<div class='arrow-right' id="arrow-right-thriller"></div>
 			</div>
 		</div>

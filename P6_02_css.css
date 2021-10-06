@@ -123,10 +123,24 @@ body
 
 .image
 {
+	display: none;
+}
+
+
+.image_container
+{
 	border: solid;
 	border-width: 5px;
 	height: 268px;
 	width: 182px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#div_image_top
+{
+	border: none;
 }
 
 .arrow-left {
@@ -156,7 +170,7 @@ body
 {
 	background-color: black;
 	color: white;
-	position: absolute;
+	position: fixed;
 	z-index: 30;
 	height: 70%;
 	width: 70%;
@@ -192,12 +206,12 @@ body
 #blur
 {
 	margin: 0 auto;
-	position: absolute;
-	background-color: rgba(0,0,0,0.5);;
+	background-color: rgba(0,0,0,0.5);
 	height: 100%;
 	width: 100%;
 	z-index: 20;
 	visibility: hidden;
+	position: fixed;
 }
 
 #movie_image
@@ -221,4 +235,18 @@ body
 #close:hover
 {
 	background-color: #CD5C5C
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #808080;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

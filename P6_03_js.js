@@ -151,6 +151,19 @@ for (let m = 0; m < 4; m++)
                 }
 
                 change_movies(index,image_places,images_from_api)
+                
+                window.setTimeout(() => {
+                    let loader = document.getElementsByClassName('loader')
+                    for (let i = 0; i < loader.length;i++){
+                    loader[i].style.display = 'none'
+                    }
+                    let images = document.getElementsByClassName('image')
+                    for (let i = 0; i < images.length;i++){
+                    images[i].style.display = 'block'
+                    }
+                },400);
+
+                
                 arrow_left.addEventListener('click', () => {
                     if (index != 0) {
                         index -= 1
@@ -183,6 +196,7 @@ for (let m = 0; m < 4; m++)
                 }
                 
             })
+            
         })
 
 }
