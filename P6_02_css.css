@@ -156,7 +156,7 @@ body
 {
 	background-color: black;
 	color: white;
-	position: absolute;
+	position: fixed;
 	z-index: 30;
 	height: 70%;
 	width: 70%;
@@ -192,7 +192,7 @@ body
 #blur
 {
 	margin: 0 auto;
-	position: absolute;
+	position: fixed;
 	background-color: rgba(0,0,0,0.5);;
 	height: 100%;
 	width: 100%;
